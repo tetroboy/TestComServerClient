@@ -1,0 +1,26 @@
+[
+    uuid(32bb8320-b41b-11cf-a6bb-0080c7b2d683),
+    version(1.0)
+]
+library TextReceiverLib
+{
+    importlib("stdole32.tlb");
+
+    [
+        object,
+        uuid(32bb8320-b41b-11cf-a6bb-0080c7b2d682),
+        oleautomation
+    ]
+    interface ITextReceiver : IUnknown
+    {
+        HRESULT ReceiveText([in] BSTR text);
+    };
+
+    [
+        uuid(E2124D11-569D-4C83-8C6D-61434C0003B1)
+    ]
+    coclass TextReceiver
+    {
+        [default] interface ITextReceiver;
+    };
+};
